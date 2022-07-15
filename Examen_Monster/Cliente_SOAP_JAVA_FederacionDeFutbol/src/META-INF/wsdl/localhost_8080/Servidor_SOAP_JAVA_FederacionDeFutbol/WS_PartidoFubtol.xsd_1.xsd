@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.1-b419 (branches/2.3.1.x-7937; 2014-08-04T08:11:03+0000) JAXWS-RI/2.2.10-b140803.1500 JAXWS-API/2.2.11 JAXB-RI/2.2.10-b140802.1033 JAXB-API/2.2.12-b140109.1041 svn-revision#unknown. --><xs:schema xmlns:tns="http://controlador.monster.edu.ec/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://controlador.monster.edu.ec/">
+
+<xs:element name="listarLocalidades" type="tns:listarLocalidades"/>
+
+<xs:element name="listarLocalidadesResponse" type="tns:listarLocalidadesResponse"/>
+
+<xs:element name="partidosDisponibles" type="tns:partidosDisponibles"/>
+
+<xs:element name="partidosDisponiblesResponse" type="tns:partidosDisponiblesResponse"/>
+
+<xs:complexType name="listarLocalidades">
+<xs:sequence>
+<xs:element name="codigoPartido" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="listarLocalidadesResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:localidad" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="localidad">
+<xs:sequence>
+<xs:element name="codigoLocalidad" type="xs:string" minOccurs="0"/>
+<xs:element name="disponibilidad" type="xs:int"/>
+<xs:element name="id" type="xs:int"/>
+<xs:element name="partido" type="xs:int"/>
+<xs:element name="precio" type="xs:float"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="partidosDisponibles">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="partidosDisponiblesResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:partidoFutbol" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="partidoFutbol">
+<xs:sequence>
+<xs:element name="codigo" type="xs:int"/>
+<xs:element name="equipoLocal" type="xs:string" minOccurs="0"/>
+<xs:element name="equipoVisita" type="xs:string" minOccurs="0"/>
+<xs:element name="fecha" type="xs:string" minOccurs="0"/>
+<xs:element name="lugar" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
